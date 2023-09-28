@@ -1,0 +1,16 @@
+[Unit]
+Description=Python claimbot service
+After=multi-user.target
+
+[Service]
+TimeoutStartSec=300
+User=root
+Group=root
+Type=simple
+Restart=always
+ExecStart=/home/shayon/Documents/Claimbotpy/virtual-env/bin/python3 /home/shayon/Documents/Claimbotpy/main.py --serve-in-foreground
+StandardError=journal
+StandardOutput=console
+
+[Install]
+WantedBy=multi-user.target

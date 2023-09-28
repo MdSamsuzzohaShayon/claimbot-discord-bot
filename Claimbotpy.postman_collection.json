@@ -1,0 +1,1157 @@
+{
+	"info": {
+		"_postman_id": "3541eed6-596d-4ffb-9fdd-86c68331051f",
+		"name": "Claimbotpy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14178218",
+		"_collection_link": "https://bold-equinox-311086.postman.co/workspace/Guesty-API~c53fbf00-1083-4368-83af-72593b1078e3/collection/14178218-3541eed6-596d-4ffb-9fdd-86c68331051f?action=share&creator=14178218&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Guesty",
+			"item": [
+				{
+					"name": "Webhook",
+					"item": [
+						{
+							"name": "Create a new webhook",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer {{TOKEN}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "content-type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"url\": \"https://2c2a-103-205-69-136.ngrok-free.app/api/webhook/task/delete\",\n    \"events\": [\n        \"task.deleted\"\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{OPEN_API_URL}}/webhooks",
+									"host": [
+										"{{OPEN_API_URL}}"
+									],
+									"path": [
+										"webhooks"
+									]
+								},
+								"description": "# New reservation webhook\n\n``` bash\ncurl --location 'https://open-api.guesty.com/v1/webhooks' \\\n-H 'authorization: Bearer token' \\\n-H 'accept: application/json' \\\n-H 'content-type: application/json' \\\n-d '{\n    \"name\": \"new_reservation_hook\",\n    \"url\": \"https://417d-103-205-69-135.ngrok-free.app/api/webhook/reservation/new\",\n    \"events\": [\n        \"reservation.new\"\n    ]\n}'\n\n```\n\n# New task webhook\n\n``` bash\ncurl --location 'https://open-api.guesty.com/v1/webhooks' \\\n-H 'authorization: Bearer token' \\\n-H 'accept: application/json' \\\n-H 'content-type: application/json' \\\n-d '{\n    \"name\": \"new_task_hook\",\n    \"url\": \"https://779a-103-205-69-128.ngrok-free.app/api/webhook/task/new\",\n    \"events\": [\n        \"task.created\"\n    ]\n}'\n\n```\n\n# Task Update Web Hook\n\n``` bash\ncurl --location 'https://open-api.guesty.com/v1/webhooks' \\\n--header 'authorization: Bearer token' \\\n--header 'accept: application/json' \\\n--header 'content-type: application/json' \\\n--data '{\n    \"name\": \"reservation_update\",\n    \"url\": \"https://668f-103-205-69-143.ngrok-free.app/api/webhook/task/new\",\n    \"events\": [\n        \"task.updated\"\n    ]\n}'\n\n```"
+							},
+							"response": []
+						},
+						{
+							"name": "Update a webhook",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer {{TOKEN}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "content-type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"url\": \"https://156a-103-205-69-136.ngrok-free.app/api/webhook/task/update\",\n    \"events\": [\n       \"task.updated\"\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{OPEN_API_URL}}/webhooks/6475e6639a6ee100418a268e",
+									"host": [
+										"{{OPEN_API_URL}}"
+									],
+									"path": [
+										"webhooks",
+										"6475e6639a6ee100418a268e"
+									]
+								},
+								"description": "# New reservation webhook\n\n``` bash\ncurl --location 'https://open-api.guesty.com/v1/webhooks' \\\n-H 'authorization: Bearer token' \\\n-H 'accept: application/json' \\\n-H 'content-type: application/json' \\\n-d '{\n    \"name\": \"new_reservation_hook\",\n    \"url\": \"https://417d-103-205-69-135.ngrok-free.app/api/webhook/reservation/new\",\n    \"events\": [\n        \"reservation.new\"\n    ]\n}'\n\n```\n\n# New task webhook\n\n``` bash\ncurl --location 'https://open-api.guesty.com/v1/webhooks' \\\n-H 'authorization: Bearer token' \\\n-H 'accept: application/json' \\\n-H 'content-type: application/json' \\\n-d '{\n    \"name\": \"new_task_hook\",\n    \"url\": \"https://779a-103-205-69-128.ngrok-free.app/api/webhook/task/new\",\n    \"events\": [\n        \"task.created\"\n    ]\n}'\n\n```"
+							},
+							"response": []
+						},
+						{
+							"name": "List all webhooks",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{OPEN_API_URL}}/webhooks",
+									"host": [
+										"{{OPEN_API_URL}}"
+									],
+									"path": [
+										"webhooks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get a webhook",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{OPEN_API_URL}}/webhooks/64368520072864002fdd0480",
+									"host": [
+										"{{OPEN_API_URL}}"
+									],
+									"path": [
+										"webhooks",
+										"64368520072864002fdd0480"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a webhook",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{OPEN_API_URL}}/webhooks/62e2f70c25a0880036122564",
+									"host": [
+										"{{OPEN_API_URL}}"
+									],
+									"path": [
+										"webhooks",
+										"62e2f70c25a0880036122564"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get all listings",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{OPEN_API_URL}}/listings?limit=100&q={\"nickname\": {\"@eq\": \"808 Castle\"}}",
+							"host": [
+								"{{OPEN_API_URL}}"
+							],
+							"path": [
+								"listings"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "100"
+								},
+								{
+									"key": "q",
+									"value": "{\"nickname\": {\"@eq\": \"808 Castle\"}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generate access token",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{GUESTY_CLIENT_SECRET}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{GUESTY_CLIENT_ID}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "open-api",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{OPEN_API_URL_BASE}}/oauth2/token",
+							"host": [
+								"{{OPEN_API_URL_BASE}}"
+							],
+							"path": [
+								"oauth2",
+								"token"
+							]
+						},
+						"description": "[Guesty user authentication](https://open-api-docs.guesty.com/docs/postman)"
+					},
+					"response": []
+				},
+				{
+					"name": "Retrive a reservation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{OPEN_API_URL}}/reservations/649d8ff1542364002be34be3",
+							"host": [
+								"{{OPEN_API_URL}}"
+							],
+							"path": [
+								"reservations",
+								"649d8ff1542364002be34be3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search reservation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{OPEN_API_URL}}/reservations?limit=100&fields=guest.fullName guestsCount&filters=[{\"field\":\"_id\", \"operator\":\"$in\", \"value\": [\"62960a9b27473f0034ed0ab9\"]}]",
+							"host": [
+								"{{OPEN_API_URL}}"
+							],
+							"path": [
+								"reservations"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "100"
+								},
+								{
+									"key": "fields",
+									"value": "guest.fullName guestsCount"
+								},
+								{
+									"key": "filters",
+									"value": "[{\"field\":\"_id\", \"operator\":\"$in\", \"value\": [\"62960a9b27473f0034ed0ab9\"]}]"
+								}
+							]
+						},
+						"description": "Filters to Find all reservation from reservation id list\n\n```\n[{\"field\":\"_id\", \"operator\":\"$in\", \"value\": [\"62960a9b27473f0034ed0ab9\"]}]\n\n```\n\n[Know more](https://docs.guesty.com/#search-reservations)"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{OPEN_API_URL}}/users?limit=200",
+							"host": [
+								"{{OPEN_API_URL}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "200"
+								},
+								{
+									"key": "q",
+									"value": "mike",
+									"disabled": true
+								}
+							]
+						},
+						"description": "[List all users](https://open-api-docs.guesty.com/reference/usershttpcontroller_getusers)"
+					},
+					"response": []
+				},
+				{
+					"name": "Retrive a user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{OPEN_API_URL}}/users/64300763c9d1a887b8e2f809",
+							"host": [
+								"{{OPEN_API_URL}}"
+							],
+							"path": [
+								"users",
+								"64300763c9d1a887b8e2f809"
+							]
+						},
+						"description": "[List all users](https://open-api-docs.guesty.com/reference/usershttpcontroller_getusers)\n\nGot user id by requesting for all users"
+					},
+					"response": []
+				},
+				{
+					"name": "Update a task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"desc update - 9\",\n    \"status\": \"pending\",\n    \"assigneeId\": null\n}"
+						},
+						"url": {
+							"raw": "{{OPEN_API_URL}}/tasks-open-api/64a9496bf8b757002ab85a93",
+							"host": [
+								"{{OPEN_API_URL}}"
+							],
+							"path": [
+								"tasks-open-api",
+								"64a9496bf8b757002ab85a93"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all task of a user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{OPEN_API_URL}}/tasks-open-api/tasks?columns=status%20taskTitle%20listing%20reservation%20scheduledFor%20endTime%20canStartAfter%20mustFinishBefore%20assignee%20id&limit=200&filters={'assigneeId':{\"@eq\":\"64300763c9d1a887b8e2f809\"}}",
+							"host": [
+								"{{OPEN_API_URL}}"
+							],
+							"path": [
+								"tasks-open-api",
+								"tasks"
+							],
+							"query": [
+								{
+									"key": "columns",
+									"value": "status%20taskTitle%20listing%20reservation%20scheduledFor%20endTime%20canStartAfter%20mustFinishBefore%20assignee%20id"
+								},
+								{
+									"key": "filters",
+									"value": "{'status':{'@nin':['completed','canceled']},\"title\":{\"@nin\":[\"Clean\", \"clean\", \"CLEAN\"]}}",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "200"
+								},
+								{
+									"key": "filters",
+									"value": "{'assigneeId':{\"@eq\":\"64300763c9d1a887b8e2f809\"}}"
+								},
+								{
+									"key": "filters",
+									"value": "{'startTime':{'@in':['2023-06-10T20:00:00.000Z','2023-06-17T20:00:00.000Z']}}",
+									"disabled": true
+								},
+								{
+									"key": "columns",
+									"value": "reservation listing status  sheduledFor endTime id assignee",
+									"disabled": true
+								}
+							]
+						},
+						"description": "# Filters\n\nGet all completed tasks that has clean title\n\n```\n{'status':{'@in':['completed']},\"title\":{\"@in\":[\"Clean\", \"clean\", \"CLEAN\"]}}\n\n```\n\nGet tasks that is not completed or canceled\n\n```\n{'status':{'@nin':['completed','canceled']},\"title\":{\"@nin\":[\"Clean\", \"clean\", \"CLEAN\"]}}\n\n```\n\nGet all tasks of a assignee\n\n```\n{'assigneeId':{\"@eq\":\"64300763c9d1a887b8e2f809\"}}\n\n```"
+					},
+					"response": []
+				},
+				{
+					"name": "Retrive a task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{OPEN_API_URL}}/tasks-open-api/64b3d002d5dcdd003d28cf51",
+							"host": [
+								"{{OPEN_API_URL}}"
+							],
+							"path": [
+								"tasks-open-api",
+								"64b3d002d5dcdd003d28cf51"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrive a listing",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{OPEN_API_URL}}/listings/62941e26afdf840032019a82",
+							"host": [
+								"{{OPEN_API_URL}}"
+							],
+							"path": [
+								"listings",
+								"62941e26afdf840032019a82"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all custom fields",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{OPEN_API_URL}}/accounts/628e84d0d29d0900350f873a/custom-fields",
+							"host": [
+								"{{OPEN_API_URL}}"
+							],
+							"path": [
+								"accounts",
+								"628e84d0d29d0900350f873a",
+								"custom-fields"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get cleaner pay custom field",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{OPEN_API_URL}}/accounts/628e84d0d29d0900350f873a/custom-fields/62d2c983d1691c00374a0dbe",
+							"host": [
+								"{{OPEN_API_URL}}"
+							],
+							"path": [
+								"accounts",
+								"628e84d0d29d0900350f873a",
+								"custom-fields",
+								"62d2c983d1691c00374a0dbe"
+							]
+						},
+						"description": "Got account id by retriving a user"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{OPEN_API_URL}}/tasks-open-api/64b3d97fd5dcdd003d28d853",
+							"host": [
+								"{{OPEN_API_URL}}"
+							],
+							"path": [
+								"tasks-open-api",
+								"64b3d97fd5dcdd003d28d853"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FastAPI",
+			"item": [
+				{
+					"name": "Listener for reservation new webhook",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"reservation\": {\n        \"_id\": \"6435c3834613d00036263e8f\",\n        \"integration\": {\n            \"limitations\": {\n                \"availableStatuses\": []\n            },\n            \"airbnb2\": {\n                \"id\": \"HMJ8QBXP2B\",\n                \"status\": \"accept\",\n                \"cancellationTerms\": {\n                    \"penaltyAmount\": \"50.00\",\n                    \"reasons\": [\n                        {\n                            \"reason\": \"DECLINE_REASON_HOST_DOUBLE\",\n                            \"sub_reasons\": [\n                                \"DECLINE_REASON_HOST_EMERGENCY\",\n                                \"DECLINE_REASON_HOST_HOST_UNAVAILABLE\",\n                                \"DECLINE_REASON_HOST_DOUBLE_BOOKED\"\n                            ]\n                        },\n                        {\n                            \"reason\": \"DECLINE_REASON_HOST_CHANGE\",\n                            \"sub_reasons\": [\n                                \"DECLINE_REASON_HOST_RESERVATION_LENGTH\",\n                                \"DECLINE_REASON_HOST_DIFFERENT_PRICE\"\n                            ]\n                        },\n                        {\n                            \"reason\": \"DECLINE_REASON_HOST_BAD_REVIEWS_SPARSE_PROFILE\",\n                            \"sub_reasons\": []\n                        },\n                        {\n                            \"reason\": \"DECLINE_REASON_HOST_UNAUTHORIZED_PARTY\",\n                            \"sub_reasons\": [\n                                \"DECLINE_REASON_HOST_PARTY_REVIEWS\",\n                                \"DECLINE_REASON_HOST_PARTY_INDICATION\"\n                            ]\n                        },\n                        {\n                            \"reason\": \"DECLINE_REASON_HOST_BEHAVIOR\",\n                            \"sub_reasons\": [\n                                \"DECLINE_REASON_HOST_BEHAVIOR_REVIEWS\",\n                                \"DECLINE_REASON_HOST_BEHAVIOR_INDICATION\"\n                            ]\n                        },\n                        {\n                            \"reason\": \"DECLINE_REASON_HOST_BAD_FIT\",\n                            \"sub_reasons\": []\n                        },\n                        {\n                            \"reason\": \"DECLINE_REASON_HOST_ASKED\",\n                            \"sub_reasons\": []\n                        },\n                        {\n                            \"reason\": \"DECLINE_REASON_HOST_OTHER\",\n                            \"sub_reasons\": []\n                        }\n                    ]\n                }\n            },\n            \"bookingCom\": {\n                \"invalidCreditCards\": [],\n                \"reports\": []\n            },\n            \"platform\": \"airbnb2\",\n            \"_id\": \"628e8b90b932ce0037e7221a\"\n        },\n        \"review\": {\n            \"shouldReview\": \"True\"\n        },\n        \"manuallyCreated\": \"False\",\n        \"listingId\": \"62941e26afdf840032019a82\",\n        \"accountId\": \"628e84d0d29d0900350f873a\",\n        \"guestsCount\": 2,\n        \"source\": \"airbnb2\",\n        \"status\": \"confirmed\",\n        \"checkIn\": \"2023-04-29T19:00:00.000Z\",\n        \"checkOut\": \"2023-04-23T14:00:00.000Z\",\n        \"checkInDateLocalized\": \"2023-04-19\",\n        \"checkOutDateLocalized\": \"2023-04-23\",\n        \"money\": {\n            \"settingsSnapshot\": {\n                \"cleaningFeeFormula\": {},\n                \"snapshotCreated\": \"True\",\n                \"taxes\": [],\n                \"channelCommission\": {\n                    \"useAccountSettings\": \"True\",\n                    \"_id\": \"6435c3834613d00036263eb8\",\n                    \"manual\": []\n                },\n                \"monthlyPriceFactor\": 0.85,\n                \"weeklyPriceFactor\": 0.9,\n                \"useAccountRevenueShare\": \"True\",\n                \"guestsIncludedInRegularFee\": 2,\n                \"extraPersonFee\": 0,\n                \"securityDepositFee\": 0,\n                \"cleaningFee\": 40\n            },\n            \"channelCommissionRules\": \"None\",\n            \"altered\": \"False\",\n            \"_id\": \"6435c3834613d00036263eb4\",\n            \"hostOriginalPayout\": 166.45,\n            \"paymentProviderIds\": [\n                \"628e8cff2be63100353f017a\"\n            ],\n            \"currency\": \"USD\",\n            \"fareAccommodation\": 128,\n            \"fareAccommodationAdjusted\": 121.6,\n            \"fareCleaning\": 40,\n            \"invoiceItems\": [\n                {\n                    \"_id\": \"5e54e32aac76ed0028128b8a\",\n                    \"type\": \"ADDITIONAL\",\n                    \"normalType\": \"AFE\",\n                    \"secondIdentifier\": \"MANAGEMENT\",\n                    \"title\": \"Management fee\",\n                    \"currency\": \"USD\",\n                    \"amount\": 10,\n                    \"isLocked\": \"True\"\n                },\n                {\n                    \"_id\": \"6435c3834613d00036263eb6\",\n                    \"type\": \"ACCOMMODATION_FARE\",\n                    \"normalType\": \"AF\",\n                    \"title\": \"Accommodation fare\",\n                    \"amount\": 128,\n                    \"isLocked\": \"True\",\n                    \"currency\": \"USD\"\n                },\n                {\n                    \"_id\": \"5e54e328ac76ed0028128b88\",\n                    \"type\": \"CLEANING_FEE\",\n                    \"normalType\": \"CF\",\n                    \"title\": \"Cleaning fee\",\n                    \"amount\": 40,\n                    \"isLocked\": \"True\",\n                    \"currency\": \"USD\"\n                },\n                {\n                    \"_id\": \"6435c3884613d00036263f7a\",\n                    \"normalType\": \"PCM\",\n                    \"amount\": -5.15,\n                    \"title\": \"Host channel fee\",\n                    \"type\": \"ADDITIONAL\",\n                    \"isLocked\": \"True\",\n                    \"currency\": \"USD\"\n                },\n                {\n                    \"_id\": \"6435c3884613d00036263f79\",\n                    \"type\": \"LENGTH_OF_STAY_DISCOUNT\",\n                    \"amount\": -6.4,\n                    \"currency\": \"USD\",\n                    \"title\": \"Length of stay discount\",\n                    \"normalType\": \"LOSD\",\n                    \"isLocked\": \"True\"\n                }\n            ],\n            \"fareAccommodationAdjustment\": 0,\n            \"fareAccommodationDiscount\": 0,\n            \"hostServiceFee\": 5.15,\n            \"hostServiceFeeTax\": 0,\n            \"hostServiceFeeIncTax\": 0,\n            \"totalFees\": 50,\n            \"subTotalPrice\": 166.45,\n            \"hostPayout\": 166.45,\n            \"hostPayoutUsd\": 166.45,\n            \"totalTaxes\": 0,\n            \"useAccountRevenueShare\": \"True\",\n            \"netIncomeFormula\": \"host_payout\",\n            \"netIncome\": 166.45,\n            \"commissionFormula\": \"net_income\",\n            \"commission\": 166.45,\n            \"commissionTaxPercentage\": 0,\n            \"commissionTax\": 0,\n            \"commissionIncTax\": 166.45,\n            \"ownerRevenueFormula\": \"net_income - pm_commission\",\n            \"ownerRevenue\": 0,\n            \"currencyConversionRateToAccount\": 1,\n            \"payments\": [\n                {\n                    \"chargebacksData\": {\n                        \"chargebacks\": []\n                    },\n                    \"paymentMethodStatus\": \"ACTIVE\",\n                    \"isAuthorizationHold\": \"False\",\n                    \"status\": \"PENDING\",\n                    \"_id\": \"6435c3884613d00036263f7e\",\n                    \"paymentMethodId\": \"58a48a4fea2a13ea9fda5873\",\n                    \"amount\": 166.45,\n                    \"shouldBePaidAt\": \"2023-04-19T22:00:00.000Z\",\n                    \"currency\": \"USD\",\n                    \"refunds\": [],\n                    \"authorizationHoldCaptures\": [],\n                    \"createdAt\": \"2023-04-11T20:31:04.505Z\",\n                    \"attempts\": [],\n                    \"receiptTargets\": [],\n                    \"guestId\": \"6435c3824613d00036263e7b\"\n                }\n            ],\n            \"balanceDue\": 166.45,\n            \"isFullyPaid\": \"False\",\n            \"paymentsDue\": 166.45,\n            \"totalRefunded\": 0,\n            \"totalPaid\": 0,\n            \"autoPaymentsPolicy\": [],\n            \"transientOccupancyTax\": 42.31\n        },\n        \"guest\": {\n            \"_id\": \"6435c3824613d00036263e7b\",\n            \"firstName\": \"Vinodh\",\n            \"fullName\": \"Vinodh Patana\",\n            \"email\": \"vinodh-l573lf4eab7gcgbl@guest.airbnb.com\",\n            \"lastName\": \"Patana\",\n            \"phone\": \"13156642222\"\n        },\n        \"preApproveState\": \"False\",\n        \"confirmationCode\": \"HMJ8QBXP2B\",\n        \"guestId\": \"6435c3824613d00036263e7b\",\n        \"isReturningGuest\": \"False\",\n        \"nightsCount\": 4,\n        \"confirmedAt\": \"2023-04-11T20:30:59.198Z\",\n        \"createdAt\": \"2023-04-11T20:30:59.998Z\",\n        \"pendingTasks\": [],\n        \"customFields\": [],\n        \"daysInAdvance\": 7,\n        \"listing\": {\n            \"_id\": \"62941de2362b210031c22ad0\",\n            \"picture\": {\n                \"thumbnail\": \"https://guesty-listing-images.s3.amazonaws.com/production/thumbnail_20770142_1230219780.jpg\"\n            },\n            \"prices\": {\n                \"currency\": \"USD\"\n            },\n            \"type\": \"SINGLE\",\n            \"nickname\": \"Princess\",\n            \"title\": \"Royal Princess Suite - Quiet, Modern, Chic\",\n            \"address\": {\n                \"full\": \"511 Brigadier Landing , Grovetown, Georgia 30813, United States\"\n            },\n            \"timezone\": \"America/New_York\"\n        },\n        \"cancellationPolicy\": \"moderate\",\n        \"numberOfGuests\": {\n            \"numberOfAdults\": 2,\n            \"numberOfChildren\": 0,\n            \"numberOfInfants\": 0,\n            \"numberOfPets\": 0\n        },\n        \"plannedArrival\": \"15:00\",\n        \"plannedDeparture\": \"10:00\",\n        \"log\": [\n            {\n                \"_id\": \"6435c3894613d00036263fb5\",\n                \"reservationId\": \"6435c3834613d00036263e8f\",\n                \"event\": \"Reservation was updated\",\n                \"by\": \"ChannelService\",\n                \"changes\": [\n                    {\n                        \"diff\": [\n                            {\n                                \"removed\": \"True\",\n                                \"value\": \"accepted\"\n                            },\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"accept\"\n                            }\n                        ],\n                        \"field\": \"integration airbnb2 status\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"50.00\"\n                            }\n                        ],\n                        \"field\": \"integration airbnb2 cancellationTerms penaltyAmount\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"DECLINE_REASON_HOST_DOUBLE\"\n                            }\n                        ],\n                        \"field\": \"integration airbnb2 cancellationTerms reasons 0 reason\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"DECLINE_REASON_HOST_EMERGENCY\"\n                            }\n                        ],\n                        \"field\": \"integration airbnb2 cancellationTerms reasons 0 sub_reasons 0\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"DECLINE_REASON_HOST_HOST_UNAVAILABLE\"\n                            }\n                        ],\n                        \"field\": \"integration airbnb2 cancellationTerms reasons 0 sub_reasons 1\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"DECLINE_REASON_HOST_DOUBLE_BOOKED\"\n                            }\n                        ],\n                        \"field\": \"integration airbnb2 cancellationTerms reasons 0 sub_reasons 2\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"DECLINE_REASON_HOST_CHANGE\"\n                            }\n                        ],\n                        \"field\": \"integration airbnb2 cancellationTerms reasons 1 reason\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"DECLINE_REASON_HOST_RESERVATION_LENGTH\"\n                            }\n                        ],\n                        \"field\": \"integration airbnb2 cancellationTerms reasons 1 sub_reasons 0\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"DECLINE_REASON_HOST_DIFFERENT_PRICE\"\n                            }\n                        ],\n                        \"field\": \"integration airbnb2 cancellationTerms reasons 1 sub_reasons 1\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"DECLINE_REASON_HOST_BAD_REVIEWS_SPARSE_PROFILE\"\n                            }\n                        ],\n                        \"field\": \"integration airbnb2 cancellationTerms reasons 2 reason\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"DECLINE_REASON_HOST_UNAUTHORIZED_PARTY\"\n                            }\n                        ],\n                        \"field\": \"integration airbnb2 cancellationTerms reasons 3 reason\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"DECLINE_REASON_HOST_PARTY_REVIEWS\"\n                            }\n                        ],\n                        \"field\": \"integration airbnb2 cancellationTerms reasons 3 sub_reasons 0\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"DECLINE_REASON_HOST_PARTY_INDICATION\"\n                            }\n                        ],\n                        \"field\": \"integration airbnb2 cancellationTerms reasons 3 sub_reasons 1\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"DECLINE_REASON_HOST_BEHAVIOR\"\n                            }\n                        ],\n                        \"field\": \"integration airbnb2 cancellationTerms reasons 4 reason\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"DECLINE_REASON_HOST_BEHAVIOR_REVIEWS\"\n                            }\n                        ],\n                        \"field\": \"integration airbnb2 cancellationTerms reasons 4 sub_reasons 0\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"DECLINE_REASON_HOST_BEHAVIOR_INDICATION\"\n                            }\n                        ],\n                        \"field\": \"integration airbnb2 cancellationTerms reasons 4 sub_reasons 1\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"DECLINE_REASON_HOST_BAD_FIT\"\n                            }\n                        ],\n                        \"field\": \"integration airbnb2 cancellationTerms reasons 5 reason\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"DECLINE_REASON_HOST_ASKED\"\n                            }\n                        ],\n                        \"field\": \"integration airbnb2 cancellationTerms reasons 6 reason\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"DECLINE_REASON_HOST_OTHER\"\n                            }\n                        ],\n                        \"field\": \"integration airbnb2 cancellationTerms reasons 7 reason\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"removed\": \"True\",\n                                \"value\": \"1\"\n                            }\n                        ],\n                        \"field\": \"money settingsSnapshot currency rate\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"removed\": \"True\",\n                                \"value\": \"Tue Apr 11 2023 20:30:59 GMT+0000 (UTC)\"\n                            }\n                        ],\n                        \"field\": \"money settingsSnapshot currency rateDate\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"removed\": \"True\",\n                                \"value\": \"USD\"\n                            }\n                        ],\n                        \"field\": \"money settingsSnapshot currency from\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"removed\": \"True\",\n                                \"value\": \"USD\"\n                            }\n                        ],\n                        \"field\": \"money settingsSnapshot currency to\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"True\"\n                            }\n                        ],\n                        \"field\": \"money settingsSnapshot channelCommission useAccountSettings\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"6435c3834613d00036263eb8\"\n                            }\n                        ],\n                        \"field\": \"money settingsSnapshot channelCommission _id\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"removed\": \"True\",\n                                \"value\": \"True\"\n                            }\n                        ],\n                        \"field\": \"money settingsSnapshot useAccountAdditionalFees\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"removed\": \"True\",\n                                \"value\": \"PER_STAY\"\n                            }\n                        ],\n                        \"field\": \"money settingsSnapshot financials cleaningFee value multiplier\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"removed\": \"True\",\n                                \"value\": \"40\"\n                            }\n                        ],\n                        \"field\": \"money settingsSnapshot financials cleaningFee value formula\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"removed\": \"True\",\n                                \"value\": \"FIXED\"\n                            }\n                        ],\n                        \"field\": \"money settingsSnapshot financials cleaningFee value valueType\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"removed\": \"True\",\n                                \"value\": \"2022-06-03T19:26:46.559Z\"\n                            }\n                        ],\n                        \"field\": \"money settingsSnapshot financials cleaningFee lastUpdated\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"removed\": \"True\",\n                                \"value\": \"Accommodation fare\"\n                            },\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"Management fee\"\n                            }\n                        ],\n                        \"field\": \"money invoiceItems 0 title\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"removed\": \"True\",\n                                \"value\": \"128\"\n                            },\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"10\"\n                            }\n                        ],\n                        \"field\": \"money invoiceItems 0 amount\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"removed\": \"True\",\n                                \"value\": \"ACCOMMODATION_FARE\"\n                            },\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"ADDITIONAL\"\n                            }\n                        ],\n                        \"field\": \"money invoiceItems 0 type\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"removed\": \"True\",\n                                \"value\": \"AF\"\n                            },\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"AFE\"\n                            }\n                        ],\n                        \"field\": \"money invoiceItems 0 normalType\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"MANAGEMENT\"\n                            }\n                        ],\n                        \"field\": \"money invoiceItems 0 secondIdentifier\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"removed\": \"True\",\n                                \"value\": \"Cleaning fee\"\n                            },\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"Accommodation fare\"\n                            }\n                        ],\n                        \"field\": \"money invoiceItems 1 title\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"removed\": \"True\",\n                                \"value\": \"40\"\n                            },\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"128\"\n                            }\n                        ],\n                        \"field\": \"money invoiceItems 1 amount\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"removed\": \"True\",\n                                \"value\": \"CLEANING_FEE\"\n                            },\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"ACCOMMODATION_FARE\"\n                            }\n                        ],\n                        \"field\": \"money invoiceItems 1 type\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"removed\": \"True\",\n                                \"value\": \"CF\"\n                            },\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"AF\"\n                            }\n                        ],\n                        \"field\": \"money invoiceItems 1 normalType\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"CLEANING_FEE\"\n                            }\n                        ],\n                        \"field\": \"money invoiceItems 2 type\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"CF\"\n                            }\n                        ],\n                        \"field\": \"money invoiceItems 2 normalType\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"Cleaning fee\"\n                            }\n                        ],\n                        \"field\": \"money invoiceItems 2 title\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"40\"\n                            }\n                        ],\n                        \"field\": \"money invoiceItems 2 amount\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"True\"\n                            }\n                        ],\n                        \"field\": \"money invoiceItems 2 isLocked\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"USD\"\n                            }\n                        ],\n                        \"field\": \"money invoiceItems 2 currency\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"PCM\"\n                            }\n                        ],\n                        \"field\": \"money invoiceItems 3 normalType\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"-5.15\"\n                            }\n                        ],\n                        \"field\": \"money invoiceItems 3 amount\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"Host channel fee\"\n                            }\n                        ],\n                        \"field\": \"money invoiceItems 3 title\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"ADDITIONAL\"\n                            }\n                        ],\n                        \"field\": \"money invoiceItems 3 type\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"True\"\n                            }\n                        ],\n                        \"field\": \"money invoiceItems 3 isLocked\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"USD\"\n                            }\n                        ],\n                        \"field\": \"money invoiceItems 3 currency\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"LENGTH_OF_STAY_DISCOUNT\"\n                            }\n                        ],\n                        \"field\": \"money invoiceItems 4 type\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"-6.4\"\n                            }\n                        ],\n                        \"field\": \"money invoiceItems 4 amount\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"USD\"\n                            }\n                        ],\n                        \"field\": \"money invoiceItems 4 currency\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"Length of stay discount\"\n                            }\n                        ],\n                        \"field\": \"money invoiceItems 4 title\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"LOSD\"\n                            }\n                        ],\n                        \"field\": \"money invoiceItems 4 normalType\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"True\"\n                            }\n                        ],\n                        \"field\": \"money invoiceItems 4 isLocked\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"ACTIVE\"\n                            }\n                        ],\n                        \"field\": \"money payments 0 paymentMethodStatus\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"False\"\n                            }\n                        ],\n                        \"field\": \"money payments 0 isAuthorizationHold\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"PENDING\"\n                            }\n                        ],\n                        \"field\": \"money payments 0 status\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"6435c3884613d00036263f7e\"\n                            }\n                        ],\n                        \"field\": \"money payments 0 _id\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"58a48a4fea2a13ea9fda5873\"\n                            }\n                        ],\n                        \"field\": \"money payments 0 paymentMethodId\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"166.45\"\n                            }\n                        ],\n                        \"field\": \"money payments 0 amount\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"Wed Apr 19 2023 22:00:00 GMT+0000 (UTC)\"\n                            }\n                        ],\n                        \"field\": \"money payments 0 shouldBePaidAt\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"USD\"\n                            }\n                        ],\n                        \"field\": \"money payments 0 currency\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"6435c3824613d00036263e7b\"\n                            }\n                        ],\n                        \"field\": \"money payments 0 guestId\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"removed\": \"True\",\n                                \"value\": \"128\"\n                            },\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"121.6\"\n                            }\n                        ],\n                        \"field\": \"money fareAccommodationAdjusted\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"removed\": \"True\",\n                                \"value\": \"0\"\n                            },\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"5.15\"\n                            }\n                        ],\n                        \"field\": \"money hostServiceFee\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"removed\": \"True\",\n                                \"value\": \"40\"\n                            },\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"50\"\n                            }\n                        ],\n                        \"field\": \"money totalFees\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"removed\": \"True\",\n                                \"value\": \"168\"\n                            },\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"166.45\"\n                            }\n                        ],\n                        \"field\": \"money subTotalPrice\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"removed\": \"True\",\n                                \"value\": \"168\"\n                            },\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"166.45\"\n                            }\n                        ],\n                        \"field\": \"money hostPayout\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"removed\": \"True\",\n                                \"value\": \"168\"\n                            },\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"166.45\"\n                            }\n                        ],\n                        \"field\": \"money netIncome\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"removed\": \"True\",\n                                \"value\": \"168\"\n                            },\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"166.45\"\n                            }\n                        ],\n                        \"field\": \"money commission\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"removed\": \"True\",\n                                \"value\": \"168\"\n                            },\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"166.45\"\n                            }\n                        ],\n                        \"field\": \"money commissionIncTax\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"removed\": \"True\",\n                                \"value\": \"168\"\n                            },\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"166.45\"\n                            }\n                        ],\n                        \"field\": \"money balanceDue\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"removed\": \"True\",\n                                \"value\": \"0\"\n                            },\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"166.45\"\n                            }\n                        ],\n                        \"field\": \"money paymentsDue\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"42.31\"\n                            }\n                        ],\n                        \"field\": \"money transientOccupancyTax\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"2\"\n                            }\n                        ],\n                        \"field\": \"numberOfGuests numberOfAdults\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"0\"\n                            }\n                        ],\n                        \"field\": \"numberOfGuests numberOfChildren\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"0\"\n                            }\n                        ],\n                        \"field\": \"numberOfGuests numberOfInfants\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"0\"\n                            }\n                        ],\n                        \"field\": \"numberOfGuests numberOfPets\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"moderate\"\n                            }\n                        ],\n                        \"field\": \"cancellationPolicy\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"15:00\"\n                            }\n                        ],\n                        \"field\": \"plannedArrival\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"10:00\"\n                            }\n                        ],\n                        \"field\": \"plannedDeparture\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"Tue Apr 11 2023 20:30:51 GMT+0000 (UTC)\"\n                            }\n                        ],\n                        \"field\": \"channelConfirmedAt\"\n                    },\n                    {\n                        \"diff\": [\n                            {\n                                \"added\": \"True\",\n                                \"value\": \"Tue Apr 11 2023 20:30:43 GMT+0000 (UTC)\"\n                            }\n                        ],\n                        \"field\": \"channelCreatedAt\"\n                    }\n                ],\n                \"at\": \"2023-04-11T20:31:05.506Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"6435c3844613d00036263ed1\",\n                \"reservationId\": \"6435c3834613d00036263e8f\",\n                \"event\": \"Booking was confirmed successfully\",\n                \"by\": \"ChannelService\",\n                \"at\": \"2023-04-11T20:31:00.631Z\",\n                \"changes\": [],\n                \"__v\": 0\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{FASTAPI_URL}}/webhook/reservation/new",
+							"host": [
+								"{{FASTAPI_URL}}"
+							],
+							"path": [
+								"webhook",
+								"reservation",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listen for a new task",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"task\": {\n        \"assigneeGroup\": [],\n        \"checklistFinished\": [],\n        \"checklist\": [],\n        \"tags\": [],\n        \"status\": \"pending\",\n        \"editedFields\": [],\n        \"_id\": \"64b04de19517e5003508a302\",\n        \"accountId\": \"628e84d0d29d0900350f873a\",\n        \"createdBy\": \"64300763c9d1a887b8e2f809\",\n        \"plannedDuration\": 3.5,\n        \"description\": \"A test task\",\n        \"assigneeId\": null,\n        \"supervisorId\": null,\n        \"attachments\": [],\n        \"priority\": 3,\n        \"title\": \"clean test\",\n        \"startTime\": \"2023-07-13T19:15:00.000Z\",\n        \"canStartAfter\": null,\n        \"mustFinishBefore\": null,\n        \"listingId\": \"63f391269bef2b002f6f2c6d\",\n        \"reservationId\": \"649758bf8e25300030f78307\",\n        \"checklistAggregated\": [],\n        \"afterEffects\": [],\n        \"comments\": [],\n        \"log\": [],\n        \"createdAt\": \"2023-07-13T19:17:53.389Z\",\n        \"updatedAt\": \"2023-07-13T19:17:53.389Z\",\n        \"enumeratedStatus\": 1,\n        \"dateForSort\": \"2023-07-13T19:15:00.000Z\",\n        \"endTime\": \"2023-07-13T22:45:00.000Z\",\n        \"assigneeFullName\": null,\n        \"__v\": 0\n    },\n    \"by\": \"Md Shayon\",\n    \"event\": \"task.created\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{FASTAPI_URL}}/webhook/task/new",
+							"host": [
+								"{{FASTAPI_URL}}"
+							],
+							"path": [
+								"webhook",
+								"task",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listen for a new task assignee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"task\": {\n        \"assigneeGroup\": [],\n        \"checklistFinished\": [],\n        \"checklist\": [],\n        \"tags\": [],\n        \"status\": \"pending\",\n        \"editedFields\": [],\n        \"_id\": \"6481fc0c8f18050041601cc8\",\n        \"accountId\": \"628e84d0d29d0900350f873a\",\n        \"createdBy\": \"64300763c9d1a887b8e2f809\",\n        \"plannedDuration\": 1,\n        \"description\": \"task with assignee test\",\n        \"assigneeId\": \"64300763c9d1a887b8e2f809\",\n        \"supervisorId\": null,\n        \"attachments\": [],\n        \"priority\": 3,\n        \"title\": \"clean test\",\n        \"startTime\": \"2023-06-08T15:45:00.000Z\",\n        \"canStartAfter\": null,\n        \"mustFinishBefore\": null,\n        \"listingId\": \"62941e5b362b210031c24203\",\n        \"reservationId\": \"6481e31b6dead1004e23e3bc\",\n        \"checklistAggregated\": [],\n        \"afterEffects\": [],\n        \"comments\": [],\n        \"log\": [],\n        \"createdAt\": \"2023-06-08T16:04:28.351Z\",\n        \"updatedAt\": \"2023-06-08T16:04:28.351Z\",\n        \"enumeratedStatus\": 6,\n        \"dateForSort\": \"2023-06-09T15:45:00.000Z\",\n        \"endTime\": \"2023-06-09T16:45:00.000Z\",\n        \"assigneeFullName\": \"Md Shayon\",\n        \"__v\": 0\n    },\n    \"by\": \"Md Shayon\",\n    \"event\": \"task.created\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{FASTAPI_URL}}/webhook/task/new",
+							"host": [
+								"{{FASTAPI_URL}}"
+							],
+							"path": [
+								"webhook",
+								"task",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listen for a task update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"task\": {\n        \"assigneeGroup\": [\n            \"Cleaner\"\n        ],\n        \"checklistFinished\": [],\n        \"checklist\": [],\n        \"tags\": [],\n        \"status\": \"pending\",\n        \"editedFields\": [\n            \"status\",\n            \"description\",\n            \"assigneeId\",\n            \"updatedAt\",\n            \"enumeratedStatus\",\n            \"assigneeFullName\",\n            \"assigneeGroup\"\n        ],\n        \"_id\": \"64b3d002d5dcdd003d28cf51\",\n        \"accountId\": \"628e84d0d29d0900350f873a\",\n        \"createdBy\": \"64300763c9d1a887b8e2f809\",\n        \"plannedDuration\": 2.5,\n        \"description\": \"This task is been updated at 2023-07-16 20:57:25.990729\",\n        \"assigneeId\": null,\n        \"supervisorId\": null,\n        \"attachments\": [],\n        \"priority\": 3,\n        \"title\": \"clean test\",\n        \"startTime\": \"2023-07-16T11:00:00.000Z\",\n        \"canStartAfter\": null,\n        \"mustFinishBefore\": null,\n        \"listingId\": \"62941e1cb3ba0300355918e4\",\n        \"reservationId\": \"64afe8ac909a2c0036b404fd\",\n        \"checklistAggregated\": [],\n        \"afterEffects\": [],\n        \"comments\": [],\n        \"log\": [\n            {\n                \"trigger\": \"api\",\n                \"_id\": \"64b3d002186fff00289aae01\",\n                \"event\": \"Task was created\",\n                \"by\": \"Md Shayon\",\n                \"at\": \"2023-07-16T11:09:54.308Z\",\n                \"changes\": []\n            },\n            {\n                \"trigger\": \"api\",\n                \"_id\": \"64b3d3f4549a930027c41cc3\",\n                \"event\": \"Task was updated\",\n                \"changes\": [\n                    {\n                        \"_id\": \"64b3d3f4549a930027c41cc4\",\n                        \"field\": \"status\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b3d3f4549a930027c41cc5\",\n                                \"removed\": true,\n                                \"value\": \"pending\"\n                            },\n                            {\n                                \"_id\": \"64b3d3f4549a930027c41cc6\",\n                                \"added\": true,\n                                \"value\": \"confirmed\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b3d3f4549a930027c41cc7\",\n                        \"field\": \"editedFields 0\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b3d3f4549a930027c41cc8\",\n                                \"added\": true,\n                                \"value\": \"status\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b3d3f4549a930027c41cc9\",\n                        \"field\": \"editedFields 1\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b3d3f4549a930027c41cca\",\n                                \"added\": true,\n                                \"value\": \"description\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b3d3f4549a930027c41ccb\",\n                        \"field\": \"editedFields 2\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b3d3f4549a930027c41ccc\",\n                                \"added\": true,\n                                \"value\": \"assigneeId\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b3d3f4549a930027c41ccd\",\n                        \"field\": \"editedFields 3\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b3d3f4549a930027c41cce\",\n                                \"added\": true,\n                                \"value\": \"updatedAt\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b3d3f4549a930027c41ccf\",\n                        \"field\": \"editedFields 4\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b3d3f4549a930027c41cd0\",\n                                \"added\": true,\n                                \"value\": \"enumeratedStatus\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b3d3f4549a930027c41cd1\",\n                        \"field\": \"editedFields 5\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b3d3f4549a930027c41cd2\",\n                                \"added\": true,\n                                \"value\": \"assigneeFullName\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b3d3f4549a930027c41cd3\",\n                        \"field\": \"description\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b3d3f4549a930027c41cd4\",\n                                \"added\": true,\n                                \"value\": \"This task is been updated at 2023-07-16 17:26:42.236211\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b3d3f4549a930027c41cd5\",\n                        \"field\": \"assigneeId\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b3d3f4549a930027c41cd6\",\n                                \"added\": true,\n                                \"value\": \"64300763c9d1a887b8e2f809\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b3d3f4549a930027c41cd7\",\n                        \"field\": \"enumeratedStatus\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b3d3f4549a930027c41cd8\",\n                                \"removed\": true,\n                                \"value\": \"1\"\n                            },\n                            {\n                                \"_id\": \"64b3d3f4549a930027c41cd9\",\n                                \"added\": true,\n                                \"value\": \"5\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b3d3f4549a930027c41cda\",\n                        \"field\": \"assigneeFullName\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b3d3f4549a930027c41cdb\",\n                                \"added\": true,\n                                \"value\": \"Md Shayon\"\n                            }\n                        ]\n                    }\n                ],\n                \"at\": \"2023-07-16T11:26:44.637Z\"\n            },\n            {\n                \"trigger\": \"api\",\n                \"_id\": \"64b3dc7ce2b7e10027564798\",\n                \"event\": \"Task was updated\",\n                \"changes\": [\n                    {\n                        \"_id\": \"64b3dc7ce2b7e10027564799\",\n                        \"field\": \"assigneeGroup 0\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b3dc7ce2b7e1002756479a\",\n                                \"added\": true,\n                                \"value\": \"Cleaner\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b3dc7ce2b7e1002756479b\",\n                        \"field\": \"status\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b3dc7ce2b7e1002756479c\",\n                                \"removed\": true,\n                                \"value\": \"confirmed\"\n                            },\n                            {\n                                \"_id\": \"64b3dc7ce2b7e1002756479d\",\n                                \"added\": true,\n                                \"value\": \"pending\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b3dc7ce2b7e1002756479e\",\n                        \"field\": \"editedFields 6\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b3dc7ce2b7e1002756479f\",\n                                \"added\": true,\n                                \"value\": \"assigneeGroup\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b3dc7ce2b7e100275647a0\",\n                        \"field\": \"description\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b3dc7ce2b7e100275647a1\",\n                                \"removed\": true,\n                                \"value\": \"This task is been updated at 2023-07-16 17:26:42.236211\"\n                            },\n                            {\n                                \"_id\": \"64b3dc7ce2b7e100275647a2\",\n                                \"added\": true,\n                                \"value\": \"This task is been updated at 2023-07-16 18:03:07.705846\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b3dc7ce2b7e100275647a3\",\n                        \"field\": \"assigneeId\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b3dc7ce2b7e100275647a4\",\n                                \"removed\": true,\n                                \"value\": \"64300763c9d1a887b8e2f809\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b3dc7ce2b7e100275647a5\",\n                        \"field\": \"enumeratedStatus\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b3dc7ce2b7e100275647a6\",\n                                \"removed\": true,\n                                \"value\": \"5\"\n                            },\n                            {\n                                \"_id\": \"64b3dc7ce2b7e100275647a7\",\n                                \"added\": true,\n                                \"value\": \"1\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b3dc7ce2b7e100275647a8\",\n                        \"field\": \"assigneeFullName\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b3dc7ce2b7e100275647a9\",\n                                \"removed\": true,\n                                \"value\": \"Md Shayon\"\n                            }\n                        ]\n                    }\n                ],\n                \"at\": \"2023-07-16T12:03:08.904Z\"\n            },\n            {\n                \"trigger\": \"api\",\n                \"_id\": \"64b40307014cb7002a97e89a\",\n                \"event\": \"Task was updated\",\n                \"changes\": [\n                    {\n                        \"_id\": \"64b40307014cb7002a97e89b\",\n                        \"field\": \"status\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b40307014cb7002a97e89c\",\n                                \"removed\": true,\n                                \"value\": \"pending\"\n                            },\n                            {\n                                \"_id\": \"64b40307014cb7002a97e89d\",\n                                \"added\": true,\n                                \"value\": \"confirmed\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b40307014cb7002a97e89e\",\n                        \"field\": \"description\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b40307014cb7002a97e89f\",\n                                \"removed\": true,\n                                \"value\": \"This task is been updated at 2023-07-16 18:03:07.705846\"\n                            },\n                            {\n                                \"_id\": \"64b40307014cb7002a97e8a0\",\n                                \"added\": true,\n                                \"value\": \"This task is been updated at 2023-07-16 20:47:33.465581\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b40307014cb7002a97e8a1\",\n                        \"field\": \"assigneeId\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b40307014cb7002a97e8a2\",\n                                \"added\": true,\n                                \"value\": \"64300763c9d1a887b8e2f809\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b40307014cb7002a97e8a3\",\n                        \"field\": \"enumeratedStatus\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b40307014cb7002a97e8a4\",\n                                \"removed\": true,\n                                \"value\": \"1\"\n                            },\n                            {\n                                \"_id\": \"64b40307014cb7002a97e8a5\",\n                                \"added\": true,\n                                \"value\": \"5\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b40307014cb7002a97e8a6\",\n                        \"field\": \"assigneeFullName\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b40307014cb7002a97e8a7\",\n                                \"added\": true,\n                                \"value\": \"Md Shayon\"\n                            }\n                        ]\n                    }\n                ],\n                \"at\": \"2023-07-16T14:47:35.354Z\"\n            },\n            {\n                \"trigger\": \"api\",\n                \"_id\": \"64b40529c50ce30028a21920\",\n                \"event\": \"Task was updated\",\n                \"changes\": [\n                    {\n                        \"_id\": \"64b40529c50ce30028a21921\",\n                        \"field\": \"status\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b40529c50ce30028a21922\",\n                                \"removed\": true,\n                                \"value\": \"confirmed\"\n                            },\n                            {\n                                \"_id\": \"64b40529c50ce30028a21923\",\n                                \"added\": true,\n                                \"value\": \"pending\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b40529c50ce30028a21924\",\n                        \"field\": \"description\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b40529c50ce30028a21925\",\n                                \"removed\": true,\n                                \"value\": \"This task is been updated at 2023-07-16 20:47:33.465581\"\n                            },\n                            {\n                                \"_id\": \"64b40529c50ce30028a21926\",\n                                \"added\": true,\n                                \"value\": \"This task is been updated at 2023-07-16 20:56:39.570440\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b40529c50ce30028a21927\",\n                        \"field\": \"assigneeId\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b40529c50ce30028a21928\",\n                                \"removed\": true,\n                                \"value\": \"64300763c9d1a887b8e2f809\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b40529c50ce30028a21929\",\n                        \"field\": \"enumeratedStatus\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b40529c50ce30028a2192a\",\n                                \"removed\": true,\n                                \"value\": \"5\"\n                            },\n                            {\n                                \"_id\": \"64b40529c50ce30028a2192b\",\n                                \"added\": true,\n                                \"value\": \"1\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b40529c50ce30028a2192c\",\n                        \"field\": \"assigneeFullName\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b40529c50ce30028a2192d\",\n                                \"removed\": true,\n                                \"value\": \"Md Shayon\"\n                            }\n                        ]\n                    }\n                ],\n                \"at\": \"2023-07-16T14:56:41.521Z\"\n            },\n            {\n                \"trigger\": \"api\",\n                \"_id\": \"64b40542c50ce30028a2196c\",\n                \"event\": \"Task was updated\",\n                \"changes\": [\n                    {\n                        \"_id\": \"64b40542c50ce30028a2196d\",\n                        \"field\": \"status\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b40542c50ce30028a2196e\",\n                                \"removed\": true,\n                                \"value\": \"pending\"\n                            },\n                            {\n                                \"_id\": \"64b40542c50ce30028a2196f\",\n                                \"added\": true,\n                                \"value\": \"confirmed\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b40542c50ce30028a21970\",\n                        \"field\": \"description\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b40542c50ce30028a21971\",\n                                \"removed\": true,\n                                \"value\": \"This task is been updated at 2023-07-16 20:56:39.570440\"\n                            },\n                            {\n                                \"_id\": \"64b40542c50ce30028a21972\",\n                                \"added\": true,\n                                \"value\": \"This task is been updated at 2023-07-16 20:57:04.878007\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b40542c50ce30028a21973\",\n                        \"field\": \"assigneeId\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b40542c50ce30028a21974\",\n                                \"added\": true,\n                                \"value\": \"64300763c9d1a887b8e2f809\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b40542c50ce30028a21975\",\n                        \"field\": \"enumeratedStatus\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b40542c50ce30028a21976\",\n                                \"removed\": true,\n                                \"value\": \"1\"\n                            },\n                            {\n                                \"_id\": \"64b40542c50ce30028a21977\",\n                                \"added\": true,\n                                \"value\": \"5\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b40542c50ce30028a21978\",\n                        \"field\": \"assigneeFullName\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b40542c50ce30028a21979\",\n                                \"added\": true,\n                                \"value\": \"Md Shayon\"\n                            }\n                        ]\n                    }\n                ],\n                \"at\": \"2023-07-16T14:57:06.792Z\"\n            }\n        ],\n        \"createdAt\": \"2023-07-16T11:09:54.253Z\",\n        \"updatedAt\": \"2023-07-16T14:57:27.944Z\",\n        \"enumeratedStatus\": 1,\n        \"dateForSort\": \"2023-07-16T11:00:00.000Z\",\n        \"endTime\": \"2023-07-16T13:30:00.000Z\",\n        \"assigneeFullName\": null,\n        \"__v\": 2,\n        \"timezone\": \"America/New_York\"\n    },\n    \"taskBefore\": {\n        \"assigneeGroup\": [\n            \"Cleaner\"\n        ],\n        \"checklistFinished\": [],\n        \"checklist\": [],\n        \"tags\": [],\n        \"status\": \"confirmed\",\n        \"editedFields\": [\n            \"status\",\n            \"description\",\n            \"assigneeId\",\n            \"updatedAt\",\n            \"enumeratedStatus\",\n            \"assigneeFullName\",\n            \"assigneeGroup\"\n        ],\n        \"_id\": \"64b3d002d5dcdd003d28cf51\",\n        \"accountId\": \"628e84d0d29d0900350f873a\",\n        \"createdBy\": \"64300763c9d1a887b8e2f809\",\n        \"plannedDuration\": 2.5,\n        \"description\": \"This task is been updated at 2023-07-16 20:57:04.878007\",\n        \"assigneeId\": \"64300763c9d1a887b8e2f809\",\n        \"supervisorId\": null,\n        \"attachments\": [],\n        \"priority\": 3,\n        \"title\": \"clean test\",\n        \"startTime\": \"2023-07-16T11:00:00.000Z\",\n        \"canStartAfter\": null,\n        \"mustFinishBefore\": null,\n        \"listingId\": \"62941e1cb3ba0300355918e4\",\n        \"reservationId\": \"64afe8ac909a2c0036b404fd\",\n        \"checklistAggregated\": [],\n        \"afterEffects\": [],\n        \"comments\": [],\n        \"log\": [\n            {\n                \"trigger\": \"api\",\n                \"_id\": \"64b3d002186fff00289aae01\",\n                \"event\": \"Task was created\",\n                \"by\": \"Md Shayon\",\n                \"at\": \"2023-07-16T11:09:54.308Z\",\n                \"changes\": []\n            },\n            {\n                \"trigger\": \"api\",\n                \"_id\": \"64b3d3f4549a930027c41cc3\",\n                \"event\": \"Task was updated\",\n                \"changes\": [\n                    {\n                        \"_id\": \"64b3d3f4549a930027c41cc4\",\n                        \"field\": \"status\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b3d3f4549a930027c41cc5\",\n                                \"removed\": true,\n                                \"value\": \"pending\"\n                            },\n                            {\n                                \"_id\": \"64b3d3f4549a930027c41cc6\",\n                                \"added\": true,\n                                \"value\": \"confirmed\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b3d3f4549a930027c41cc7\",\n                        \"field\": \"editedFields 0\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b3d3f4549a930027c41cc8\",\n                                \"added\": true,\n                                \"value\": \"status\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b3d3f4549a930027c41cc9\",\n                        \"field\": \"editedFields 1\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b3d3f4549a930027c41cca\",\n                                \"added\": true,\n                                \"value\": \"description\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b3d3f4549a930027c41ccb\",\n                        \"field\": \"editedFields 2\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b3d3f4549a930027c41ccc\",\n                                \"added\": true,\n                                \"value\": \"assigneeId\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b3d3f4549a930027c41ccd\",\n                        \"field\": \"editedFields 3\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b3d3f4549a930027c41cce\",\n                                \"added\": true,\n                                \"value\": \"updatedAt\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b3d3f4549a930027c41ccf\",\n                        \"field\": \"editedFields 4\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b3d3f4549a930027c41cd0\",\n                                \"added\": true,\n                                \"value\": \"enumeratedStatus\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b3d3f4549a930027c41cd1\",\n                        \"field\": \"editedFields 5\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b3d3f4549a930027c41cd2\",\n                                \"added\": true,\n                                \"value\": \"assigneeFullName\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b3d3f4549a930027c41cd3\",\n                        \"field\": \"description\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b3d3f4549a930027c41cd4\",\n                                \"added\": true,\n                                \"value\": \"This task is been updated at 2023-07-16 17:26:42.236211\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b3d3f4549a930027c41cd5\",\n                        \"field\": \"assigneeId\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b3d3f4549a930027c41cd6\",\n                                \"added\": true,\n                                \"value\": \"64300763c9d1a887b8e2f809\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b3d3f4549a930027c41cd7\",\n                        \"field\": \"enumeratedStatus\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b3d3f4549a930027c41cd8\",\n                                \"removed\": true,\n                                \"value\": \"1\"\n                            },\n                            {\n                                \"_id\": \"64b3d3f4549a930027c41cd9\",\n                                \"added\": true,\n                                \"value\": \"5\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b3d3f4549a930027c41cda\",\n                        \"field\": \"assigneeFullName\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b3d3f4549a930027c41cdb\",\n                                \"added\": true,\n                                \"value\": \"Md Shayon\"\n                            }\n                        ]\n                    }\n                ],\n                \"at\": \"2023-07-16T11:26:44.637Z\"\n            },\n            {\n                \"trigger\": \"api\",\n                \"_id\": \"64b3dc7ce2b7e10027564798\",\n                \"event\": \"Task was updated\",\n                \"changes\": [\n                    {\n                        \"_id\": \"64b3dc7ce2b7e10027564799\",\n                        \"field\": \"assigneeGroup 0\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b3dc7ce2b7e1002756479a\",\n                                \"added\": true,\n                                \"value\": \"Cleaner\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b3dc7ce2b7e1002756479b\",\n                        \"field\": \"status\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b3dc7ce2b7e1002756479c\",\n                                \"removed\": true,\n                                \"value\": \"confirmed\"\n                            },\n                            {\n                                \"_id\": \"64b3dc7ce2b7e1002756479d\",\n                                \"added\": true,\n                                \"value\": \"pending\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b3dc7ce2b7e1002756479e\",\n                        \"field\": \"editedFields 6\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b3dc7ce2b7e1002756479f\",\n                                \"added\": true,\n                                \"value\": \"assigneeGroup\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b3dc7ce2b7e100275647a0\",\n                        \"field\": \"description\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b3dc7ce2b7e100275647a1\",\n                                \"removed\": true,\n                                \"value\": \"This task is been updated at 2023-07-16 17:26:42.236211\"\n                            },\n                            {\n                                \"_id\": \"64b3dc7ce2b7e100275647a2\",\n                                \"added\": true,\n                                \"value\": \"This task is been updated at 2023-07-16 18:03:07.705846\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b3dc7ce2b7e100275647a3\",\n                        \"field\": \"assigneeId\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b3dc7ce2b7e100275647a4\",\n                                \"removed\": true,\n                                \"value\": \"64300763c9d1a887b8e2f809\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b3dc7ce2b7e100275647a5\",\n                        \"field\": \"enumeratedStatus\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b3dc7ce2b7e100275647a6\",\n                                \"removed\": true,\n                                \"value\": \"5\"\n                            },\n                            {\n                                \"_id\": \"64b3dc7ce2b7e100275647a7\",\n                                \"added\": true,\n                                \"value\": \"1\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b3dc7ce2b7e100275647a8\",\n                        \"field\": \"assigneeFullName\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b3dc7ce2b7e100275647a9\",\n                                \"removed\": true,\n                                \"value\": \"Md Shayon\"\n                            }\n                        ]\n                    }\n                ],\n                \"at\": \"2023-07-16T12:03:08.904Z\"\n            },\n            {\n                \"trigger\": \"api\",\n                \"_id\": \"64b40307014cb7002a97e89a\",\n                \"event\": \"Task was updated\",\n                \"changes\": [\n                    {\n                        \"_id\": \"64b40307014cb7002a97e89b\",\n                        \"field\": \"status\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b40307014cb7002a97e89c\",\n                                \"removed\": true,\n                                \"value\": \"pending\"\n                            },\n                            {\n                                \"_id\": \"64b40307014cb7002a97e89d\",\n                                \"added\": true,\n                                \"value\": \"confirmed\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b40307014cb7002a97e89e\",\n                        \"field\": \"description\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b40307014cb7002a97e89f\",\n                                \"removed\": true,\n                                \"value\": \"This task is been updated at 2023-07-16 18:03:07.705846\"\n                            },\n                            {\n                                \"_id\": \"64b40307014cb7002a97e8a0\",\n                                \"added\": true,\n                                \"value\": \"This task is been updated at 2023-07-16 20:47:33.465581\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b40307014cb7002a97e8a1\",\n                        \"field\": \"assigneeId\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b40307014cb7002a97e8a2\",\n                                \"added\": true,\n                                \"value\": \"64300763c9d1a887b8e2f809\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b40307014cb7002a97e8a3\",\n                        \"field\": \"enumeratedStatus\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b40307014cb7002a97e8a4\",\n                                \"removed\": true,\n                                \"value\": \"1\"\n                            },\n                            {\n                                \"_id\": \"64b40307014cb7002a97e8a5\",\n                                \"added\": true,\n                                \"value\": \"5\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b40307014cb7002a97e8a6\",\n                        \"field\": \"assigneeFullName\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b40307014cb7002a97e8a7\",\n                                \"added\": true,\n                                \"value\": \"Md Shayon\"\n                            }\n                        ]\n                    }\n                ],\n                \"at\": \"2023-07-16T14:47:35.354Z\"\n            },\n            {\n                \"trigger\": \"api\",\n                \"_id\": \"64b40529c50ce30028a21920\",\n                \"event\": \"Task was updated\",\n                \"changes\": [\n                    {\n                        \"_id\": \"64b40529c50ce30028a21921\",\n                        \"field\": \"status\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b40529c50ce30028a21922\",\n                                \"removed\": true,\n                                \"value\": \"confirmed\"\n                            },\n                            {\n                                \"_id\": \"64b40529c50ce30028a21923\",\n                                \"added\": true,\n                                \"value\": \"pending\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b40529c50ce30028a21924\",\n                        \"field\": \"description\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b40529c50ce30028a21925\",\n                                \"removed\": true,\n                                \"value\": \"This task is been updated at 2023-07-16 20:47:33.465581\"\n                            },\n                            {\n                                \"_id\": \"64b40529c50ce30028a21926\",\n                                \"added\": true,\n                                \"value\": \"This task is been updated at 2023-07-16 20:56:39.570440\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b40529c50ce30028a21927\",\n                        \"field\": \"assigneeId\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b40529c50ce30028a21928\",\n                                \"removed\": true,\n                                \"value\": \"64300763c9d1a887b8e2f809\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b40529c50ce30028a21929\",\n                        \"field\": \"enumeratedStatus\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b40529c50ce30028a2192a\",\n                                \"removed\": true,\n                                \"value\": \"5\"\n                            },\n                            {\n                                \"_id\": \"64b40529c50ce30028a2192b\",\n                                \"added\": true,\n                                \"value\": \"1\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b40529c50ce30028a2192c\",\n                        \"field\": \"assigneeFullName\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b40529c50ce30028a2192d\",\n                                \"removed\": true,\n                                \"value\": \"Md Shayon\"\n                            }\n                        ]\n                    }\n                ],\n                \"at\": \"2023-07-16T14:56:41.521Z\"\n            },\n            {\n                \"trigger\": \"api\",\n                \"_id\": \"64b40542c50ce30028a2196c\",\n                \"event\": \"Task was updated\",\n                \"changes\": [\n                    {\n                        \"_id\": \"64b40542c50ce30028a2196d\",\n                        \"field\": \"status\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b40542c50ce30028a2196e\",\n                                \"removed\": true,\n                                \"value\": \"pending\"\n                            },\n                            {\n                                \"_id\": \"64b40542c50ce30028a2196f\",\n                                \"added\": true,\n                                \"value\": \"confirmed\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b40542c50ce30028a21970\",\n                        \"field\": \"description\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b40542c50ce30028a21971\",\n                                \"removed\": true,\n                                \"value\": \"This task is been updated at 2023-07-16 20:56:39.570440\"\n                            },\n                            {\n                                \"_id\": \"64b40542c50ce30028a21972\",\n                                \"added\": true,\n                                \"value\": \"This task is been updated at 2023-07-16 20:57:04.878007\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b40542c50ce30028a21973\",\n                        \"field\": \"assigneeId\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b40542c50ce30028a21974\",\n                                \"added\": true,\n                                \"value\": \"64300763c9d1a887b8e2f809\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b40542c50ce30028a21975\",\n                        \"field\": \"enumeratedStatus\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b40542c50ce30028a21976\",\n                                \"removed\": true,\n                                \"value\": \"1\"\n                            },\n                            {\n                                \"_id\": \"64b40542c50ce30028a21977\",\n                                \"added\": true,\n                                \"value\": \"5\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b40542c50ce30028a21978\",\n                        \"field\": \"assigneeFullName\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b40542c50ce30028a21979\",\n                                \"added\": true,\n                                \"value\": \"Md Shayon\"\n                            }\n                        ]\n                    }\n                ],\n                \"at\": \"2023-07-16T14:57:06.792Z\"\n            }\n        ],\n        \"createdAt\": \"2023-07-16T11:09:54.253Z\",\n        \"updatedAt\": \"2023-07-16T14:57:06.766Z\",\n        \"enumeratedStatus\": 5,\n        \"dateForSort\": \"2023-07-16T11:00:00.000Z\",\n        \"endTime\": \"2023-07-16T13:30:00.000Z\",\n        \"assigneeFullName\": \"Md Shayon\",\n        \"__v\": 2,\n        \"timezone\": \"America/New_York\"\n    },\n    \"event\": \"task.updated\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{FASTAPI_URL}}/webhook/task/update",
+							"host": [
+								"{{FASTAPI_URL}}"
+							],
+							"path": [
+								"webhook",
+								"task",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API Test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{FASTAPI_URL}}",
+							"host": [
+								"{{FASTAPI_URL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listen for task delete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"task\": {\n        \"assigneeGroup\": [],\n        \"checklistFinished\": [],\n        \"checklist\": [],\n        \"tags\": [],\n        \"status\": \"confirmed\",\n        \"editedFields\": [\n            \"status\",\n            \"assigneeId\",\n            \"updatedAt\",\n            \"enumeratedStatus\",\n            \"assigneeFullName\"\n        ],\n        \"_id\": \"64b2fa61d5dcdd003d283790\",\n        \"accountId\": \"628e84d0d29d0900350f873a\",\n        \"createdBy\": \"64300763c9d1a887b8e2f809\",\n        \"plannedDuration\": 2.5,\n        \"description\": \"a clean test at 1:58\",\n        \"assigneeId\": \"64300763c9d1a887b8e2f809\",\n        \"supervisorId\": null,\n        \"attachments\": [],\n        \"priority\": 3,\n        \"title\": \"clean test\",\n        \"startTime\": \"2023-07-15T19:45:00.000Z\",\n        \"canStartAfter\": null,\n        \"mustFinishBefore\": null,\n        \"listingId\": \"62941e38afdf840032019efd\",\n        \"reservationId\": \"64b2d85aa4793600382da6c8\",\n        \"checklistAggregated\": [],\n        \"afterEffects\": [],\n        \"comments\": [],\n        \"log\": [\n            {\n                \"trigger\": \"api\",\n                \"_id\": \"64b2fa6100226f00280852cb\",\n                \"event\": \"Task was created\",\n                \"by\": \"Md Shayon\",\n                \"at\": \"2023-07-15T19:58:25.141Z\",\n                \"changes\": []\n            },\n            {\n                \"trigger\": \"api\",\n                \"_id\": \"64b2fed487493f00292a014b\",\n                \"event\": \"Task was updated\",\n                \"changes\": [\n                    {\n                        \"_id\": \"64b2fed487493f00292a014c\",\n                        \"field\": \"status\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b2fed487493f00292a014d\",\n                                \"removed\": true,\n                                \"value\": \"pending\"\n                            },\n                            {\n                                \"_id\": \"64b2fed487493f00292a014e\",\n                                \"added\": true,\n                                \"value\": \"confirmed\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b2fed487493f00292a014f\",\n                        \"field\": \"editedFields 0\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b2fed487493f00292a0150\",\n                                \"added\": true,\n                                \"value\": \"status\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b2fed487493f00292a0151\",\n                        \"field\": \"editedFields 1\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b2fed487493f00292a0152\",\n                                \"added\": true,\n                                \"value\": \"assigneeId\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b2fed487493f00292a0153\",\n                        \"field\": \"editedFields 2\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b2fed487493f00292a0154\",\n                                \"added\": true,\n                                \"value\": \"updatedAt\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b2fed487493f00292a0155\",\n                        \"field\": \"editedFields 3\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b2fed487493f00292a0156\",\n                                \"added\": true,\n                                \"value\": \"enumeratedStatus\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b2fed487493f00292a0157\",\n                        \"field\": \"editedFields 4\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b2fed487493f00292a0158\",\n                                \"added\": true,\n                                \"value\": \"assigneeFullName\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b2fed487493f00292a0159\",\n                        \"field\": \"assigneeId\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b2fed487493f00292a015a\",\n                                \"added\": true,\n                                \"value\": \"64300763c9d1a887b8e2f809\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b2fed487493f00292a015b\",\n                        \"field\": \"enumeratedStatus\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b2fed487493f00292a015c\",\n                                \"removed\": true,\n                                \"value\": \"1\"\n                            },\n                            {\n                                \"_id\": \"64b2fed487493f00292a015d\",\n                                \"added\": true,\n                                \"value\": \"5\"\n                            }\n                        ]\n                    },\n                    {\n                        \"_id\": \"64b2fed487493f00292a015e\",\n                        \"field\": \"assigneeFullName\",\n                        \"diff\": [\n                            {\n                                \"_id\": \"64b2fed487493f00292a015f\",\n                                \"added\": true,\n                                \"value\": \"Md Shayon\"\n                            }\n                        ]\n                    }\n                ],\n                \"at\": \"2023-07-15T20:17:24.929Z\"\n            }\n        ],\n        \"createdAt\": \"2023-07-15T19:58:25.093Z\",\n        \"updatedAt\": \"2023-07-15T20:17:00.746Z\",\n        \"enumeratedStatus\": 5,\n        \"dateForSort\": \"2023-07-15T19:45:00.000Z\",\n        \"endTime\": \"2023-07-15T22:15:00.000Z\",\n        \"assigneeFullName\": \"Md Shayon\",\n        \"__v\": 1,\n        \"timezone\": \"America/New_York\"\n    },\n    \"event\": \"task.deleted\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{FASTAPI_URL}}/webhook/task/delete",
+							"host": [
+								"{{FASTAPI_URL}}"
+							],
+							"path": [
+								"webhook",
+								"task",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Discord",
+			"item": [
+				{
+					"name": "Retrive a discord channel",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "headerPrefix",
+									"value": "Bot",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{DISCORD_API}}/channels/{{AVAILABLE_CLEANING_CHANNEL_ID}}",
+							"host": [
+								"{{DISCORD_API}}"
+							],
+							"path": [
+								"channels",
+								"{{AVAILABLE_CLEANING_CHANNEL_ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete multiple message",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "headerPrefix",
+									"value": "Bot",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"messages\": [1102984694418649099, 1102984697035886702, 1102984702203281522]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{DISCORD_API}}/channels/1102982896035303454/messages/bulk-delete",
+							"host": [
+								"{{DISCORD_API}}"
+							],
+							"path": [
+								"channels",
+								"1102982896035303454",
+								"messages",
+								"bulk-delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all users of a guild",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "headerPrefix",
+									"value": "Bot",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{DISCORD_API}}/guilds/932721695440109619/members",
+							"host": [
+								"{{DISCORD_API}}"
+							],
+							"path": [
+								"guilds",
+								"932721695440109619",
+								"members"
+							]
+						},
+						"description": "Guilds or servers\n\nexample -> 932721695440109619\n\nRoyal Homes -> 996265050941698158"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all messages",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "headerPrefix",
+									"value": "Bot",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{DISCORD_API}}/channels/1125680974215266305/messages/1125680985799929866",
+							"host": [
+								"{{DISCORD_API}}"
+							],
+							"path": [
+								"channels",
+								"1125680974215266305",
+								"messages",
+								"1125680985799929866"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a user",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "headerPrefix",
+									"value": "Bot",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{DISCORD_API}}/users/1078323526781653052",
+							"host": [
+								"{{DISCORD_API}}"
+							],
+							"path": [
+								"users",
+								"1078323526781653052"
+							]
+						},
+						"description": "# Users Details\n\n| ID | username | Display Name |\n| --- | --- | --- |\n| 953753143106232370 | Fogman | null |\n| 633300276626980864 | shayon | Md Shayon |\n| 1000748033207713852 | alliekitchens | null |"
+					},
+					"response": []
+				},
+				{
+					"name": "Retrive a message",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "headerPrefix",
+									"value": "Bot",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{DISCORD_API}}/channels/1127191721193771130/messages/1127660858768625794",
+							"host": [
+								"{{DISCORD_API}}"
+							],
+							"path": [
+								"channels",
+								"1127191721193771130",
+								"messages",
+								"1127660858768625794"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "TOKEN",
+			"value": "eyJraWQiOiI5QlNOaTU4WVdhY0g1X0VidkRlNHVtcFl1b09VMTVnTU1Oc3puWXVOZkNBIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULkRoYkQxbFlHbGRxZVJCdVhIWjFzM0ZPaXdWYUVONDN5Q3pMb0V1cVVHT0UiLCJpc3MiOiJodHRwczovL2xvZ2luLmd1ZXN0eS5jb20vb2F1dGgyL2F1czFwOHFyaDUzQ2NRVEk5NWQ3IiwiYXVkIjoiaHR0cHM6Ly9vcGVuLWFwaS5ndWVzdHkuY29tIiwiaWF0IjoxNjkwNjI5MDk5LCJleHAiOjE2OTA3MTU0OTksImNpZCI6IjBvYTVzd25xaTR1S0x5THY5NWQ3Iiwic2NwIjpbIm9wZW4tYXBpIl0sInJlcXVlc3RlciI6IkVYVEVSTkFMIiwiYWNjb3VudElkIjoiNjI4ZTg0ZDBkMjlkMDkwMDM1MGY4NzNhIiwic3ViIjoiMG9hNXN3bnFpNHVLTHlMdjk1ZDciLCJ1c2VyUm9sZXMiOlt7InJvbGVJZCI6eyJwZXJtaXNzaW9ucyI6WyJhZG1pbiJdfX1dLCJyb2xlIjoidXNlciIsImlhbSI6InYzIiwiYWNjb3VudE5hbWUiOiJSYWlkZW4gRnJ1bmsiLCJuYW1lIjoiQ2xlYW5lciBDYWxjdWxhdGlvbnMifQ.ISNMCx8sBRKNqAWszYP79syhZSst-vywzGUqySBabt0TWdDIhtwMMeiSqlEh5mbRX0GUwHIcYHIqacH2psEFjN9pK1OcPI_t-YeAetFe5DXTJvie5eNUwFSu-dmQsVELvl2yd2XCgMyCSFAVlxPPzRUA0oHhw1VZex7yiXk3Dx-nM68YtubAheUH50M5Y2Y-l6QHOQTcUm0Vxa_amiWKDphRLA76iECLEkykkbMaW-Yuka_UcdUBRu_bJ_kgXIBN30eEaaLeZh7LoMYI9uplAq3CFk5RdZDUpfSkqvBKT4PdcRvBKbocFsbPoBerRXKJrcHFBPxe8_mH3DeMk7NeCA",
+			"type": "string"
+		},
+		{
+			"key": "OPEN_API_URL",
+			"value": "https://open-api.guesty.com/v1",
+			"type": "string"
+		},
+		{
+			"key": "OPEN_API_URL_BASE",
+			"value": "https://open-api.guesty.com",
+			"type": "string"
+		},
+		{
+			"key": "FASTAPI_URL",
+			"value": "https://localhost:8000/api",
+			"type": "string"
+		},
+		{
+			"key": "FASTAPI_URL",
+			"value": "https://theserver.tk/api",
+			"type": "string",
+			"disabled": true
+		},
+		{
+			"key": "FASTAPI_URL",
+			"value": "https://779a-103-205-69-128.ngrok-free.app/api",
+			"type": "string",
+			"disabled": true
+		},
+		{
+			"key": "DISCORD_BOT_TOKEN",
+			"value": "MTA5MzIxMTU3MDM3ODYzNzMxMg.GSrMDb.LffmcKmnJe_b-Brnclcmd0LB1T_E9xVcMJCsNQ",
+			"type": "string"
+		},
+		{
+			"key": "AVAILABLE_CLEANING_CHANNEL_ID",
+			"value": "1094329672256454666",
+			"type": "string"
+		},
+		{
+			"key": "DISCORD_API",
+			"value": "https://discord.com/api",
+			"type": "string"
+		},
+		{
+			"key": "DISCORD_GUILD_ID",
+			"value": "932721695440109619",
+			"type": "string"
+		},
+		{
+			"key": "GUESTY_CLIENT_ID",
+			"value": "0oa5swnqi4uKLyLv95d7",
+			"type": "string"
+		},
+		{
+			"key": "GUESTY_CLIENT_SECRET",
+			"value": "IjcSL9whL_MQnmcz3PL_pv5eWwyi9qbKUlrCnm51",
+			"type": "string"
+		}
+	]
+}

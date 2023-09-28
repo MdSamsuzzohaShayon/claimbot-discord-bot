@@ -1,0 +1,5 @@
+{
+  "name": "claimbotpy",
+  "script": "/home/shayon/Claimbotv2/main.py",
+  "interpreter": "/home/shayon/Claimbotv2/virtual-env/bin/python3"
+}

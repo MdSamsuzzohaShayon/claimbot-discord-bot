@@ -1,0 +1,12 @@
+/virtual-env
+.env
+.env.prod.backup
+.env.prod
+.env.dev
+.idea
+__pycache__
+res
+image
+responses
+/config/claimbotpy.log
+**/__pycache__
